@@ -61,11 +61,16 @@
   </style>
 
   <script>
-    setTimeout(function () {
-      window.location.href =
-        "https://script.google.com/a/macros/woodworkersacademy.com/s/AKfycbwyxPKzf7fHl8TL1EJZrrRQHWUjLXWRBwPJhdI4CoVFTq8d8hq-jghdsHccqBb7rrgP/exec";
-    }, 15000);
-  </script>
+  const isStandalone =
+    window.navigator.standalone === true ||
+    window.matchMedia('(display-mode: standalone)').matches;
+
+  if (isStandalone) {
+    window.location.replace(
+      "https://script.google.com/a/macros/woodworkersacademy.com/s/AKfycbwyxPKzf7fHl8TL1EJZrrRQHWUjLXWRBwPJhdI4CoVFTq8d8hq-jghdsHccqBb7rrgP/exec"
+    );
+  }
+</script>
 </head>
 
 <body>
